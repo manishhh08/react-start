@@ -6,8 +6,10 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Portfolio start from here</h1>
-      <p>This is the landing page for the portfolio</p>
+      <div className="header">
+        <h1>Portfolio start from here</h1>
+        <p>This is the landing page for the portfolio</p>
+      </div>
     </>
   );
 }
