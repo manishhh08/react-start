@@ -1,3 +1,4 @@
+import Result from "./componens/Result.jsx";
 function App() {
   return (
     <>
@@ -22,7 +23,8 @@ function App() {
             <div className="btn">1</div>
             <div className="btn">2</div>
             <div className="btn">3</div>
-            <div className="btn rowspan special-btn">=</div>
+            <div className="btn rowspan special-btn"> =</div>
+
             <div className="btn colspan">0</div>
             <div className="btn">.</div>
           </div>

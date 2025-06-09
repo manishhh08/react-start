@@ -62,7 +62,7 @@ body {
 }
 
 .btn-body > .btn:hover {
-  background-color: orange;
+  background-color: rgba(107, 8, 8, 0.702);
   cursor: pointer;
 }
 
