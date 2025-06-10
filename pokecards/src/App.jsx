@@ -10,8 +10,8 @@ function App() {
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
     name: "pikachu",
     type: "Electric",
-    hp: 10,
-    attack: 55,
+    hp: 222,
+    attack: 22,
     defense: 40,
     ability: {
       name: "static",
@@ -29,7 +29,7 @@ function App() {
       attack: 55,
       defense: 40,
       ability: {
-        name: "static",
+        name: "Static",
         desc: "When a Pokémon with this Ability is hit by a move that makes contact, there is a 30% chance that the attacking Pokémon will become paralyzed. This can deter physical attackers from targeting Pikachu.",
       },
     },
