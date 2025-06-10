@@ -66,10 +66,10 @@ function App() {
       <div className="wrapper" id="pokelist">
         {/* <PokeCard pokemon={pokemon} /> */}
 
-        {pokelist.map((item) => {
+        {pokelist.map((item, index) => {
           return (
             <>
-              <PokeCard pokemon={item} />
+              <PokeCard key={item.name + "-" + index} pokemon={item} />
             </>
           );
         })}
