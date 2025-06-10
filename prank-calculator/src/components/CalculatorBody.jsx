@@ -1,9 +1,57 @@
 import React from "react";
 import ButtonComponent from "./ButtonComponent";
 
-const CalculatorBody = () => {
+const CalculatorBody = (props) => {
+  const operators = ["/", "*", "-", "+"];
+  const accpetedKeys = "1234567890CB=";
+  let lastOperator = "+";
+
+  let { setResult, result } = props;
+  const total = () => {
+    let ttl = eval(result);
+    let resultstr = "";
+
+    //check if ttl is not a number
+
+    if (isNaN(ttl) || !isFinite(ttl) || ttl === 0) {
+      resultstr = "";
+    } else {
+      resultstr = ttl;
+    }
+    setResult(resultstr);
+  };
+
   const handleOnClick = (inputData) => {
-    alert("Button Clicked is :" + inputData);
+    //alert("Button Clicked is :" + inputData);
+    //clear output using C
+    // console.log(inputData);
+
+    // setResult(inputData);
+
+    // return;
+
+    if (inputData == "C") {
+      setResult("0.0");
+      return;
+    }
+    if (inputData === "B") {
+      setResult(result.slice(0, -1));
+      return;
+    }
+
+    // if . clicked
+
+    // if operators clicked
+
+    //evaluate using =
+    if (inputData === "=") {
+      const lastChar = result[result.length - 1];
+      if (!operators.includes(lastChar)) {
+        total();
+      }
+      return;
+    }
+    setResult(result + inputData);
   };
   return (
     <div className="btn-body">

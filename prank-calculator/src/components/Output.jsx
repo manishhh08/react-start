@@ -1,7 +1,7 @@
 import React from "react";
 
-const Output = () => {
-  let outputData = 0.0;
+const Output = (props) => {
+  let { outputData } = props;
   return (
     <div className="output" id="ouput">
       {outputData}
