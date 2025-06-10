@@ -30,12 +30,13 @@ const CalculatorBody = (props) => {
 
     // return;
 
-    if (inputData == "C") {
+    if (inputData === "C") {
       setResult("0.0");
       return;
     }
     if (inputData === "B") {
       setResult(result.slice(0, -1));
+      //write if case for checking the 0.0 value
       return;
     }
 
@@ -44,14 +45,15 @@ const CalculatorBody = (props) => {
     // if operators clicked
 
     //evaluate using =
-    if (inputData === "=") {
+    if (inputData == "=") {
       const lastChar = result[result.length - 1];
       if (!operators.includes(lastChar)) {
         total();
       }
       return;
     }
-    setResult(result + inputData);
+
+    setResult((parseInt(result) == 0 ? "" : result) + inputData);
   };
   return (
     <div className="btn-body">
