@@ -63,7 +63,12 @@ const CalculatorBody = () => {
         content="6"
         clickFunction={handleOnClick}
       />
-      <div className="btn special-btn">+</div>
+      <ButtonComponent
+        btnClasses="btn special-btn"
+        content="+"
+        clickFunction={handleOnClick}
+      />
+
       <ButtonComponent
         btnClasses="btn"
         content="1"
