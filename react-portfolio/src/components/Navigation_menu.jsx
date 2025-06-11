@@ -40,7 +40,7 @@ function Navigation_menu() {
               </a>
             </div>
           </div>
-          <label for="hamburgerMenu" test="hamburg">
+          <label htmlFor="hamburgerMenu" test="hamburg">
             <i className="fa-solid fa-bars"></i>
           </label>
         </div>

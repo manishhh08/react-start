@@ -22,7 +22,7 @@ const HeroSection = () => {
           <img
             src={profileImage}
             alt="manish profile"
-            style="object-fit: cover; height: 300px"
+            style={{ objectFit: "cover", height: "300px" }}
           />
         </div>
       </div>
