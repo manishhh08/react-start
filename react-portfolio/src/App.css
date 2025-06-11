@@ -99,6 +99,7 @@ header .container .menu {
   align-items: center;
   justify-content: center;
   margin-bottom: 2em;
+  width: 80%;
 }
 
 .grid {
@@ -120,7 +121,7 @@ header .container .menu {
   grid-template-areas: "left right";
   padding: 2rem;
   box-shadow: var(--shadow);
-  width: 80%;
+
   grid-template-columns: 1fr 2fr;
 }
 

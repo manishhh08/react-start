@@ -1,18 +1,16 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../App.css";
-import DarkMode from "./Darkmode";
+// import DarkMode from "./Darkmode";
 import Navigation_menu from "./Navigation_menu";
 import HeroSection from "./HeroSection";
 
 function App() {
   return (
     <>
-      <DarkMode />
+      {/* <DarkMode /> */}
 
       <div className="wrapper">
         <label htmlFor="darkmode" id="darkmodelabel">
-          {/* <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" /> */}
-          <p>Button</p>
+          <i className="fa-solid fa-circle-half-stroke"></i>
         </label>
         <Navigation_menu />
         <HeroSection />
