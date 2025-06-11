@@ -1,14 +1,20 @@
-import { useState } from "react";
-import reactLogo from "../assets/react.svg";
-import viteLogo from "/vite.svg";
 import "../App.css";
 import DarkMode from "./Darkmode";
 import Navigation_menu from "./Navigation_menu";
+import HeroSection from "./HeroSection";
 
 function App() {
   return (
     <>
-      <Navigation_menu />
+      <DarkMode />
+
+      <div className="wrapper">
+        <label for="darkmode" id="darkmodelabel">
+          <FontAwesomeIcon icon="fa-solid fa-circle-half-stroke" />
+        </label>
+        <Navigation_menu />
+        <HeroSection />
+      </div>
     </>
   );
 }
