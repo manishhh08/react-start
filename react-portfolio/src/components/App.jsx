@@ -3,6 +3,8 @@ import "../App.css";
 import Navigation_menu from "./Navigation_menu";
 import HeroSection from "./HeroSection";
 import Details from "./Details";
+import Skills from "./Skills";
+import MyProject from "./MyProject";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Navigation_menu />
         <HeroSection />
         <Details />
+        <Skills />
+        <MyProject />
       </div>
     </>
   );
