@@ -2,6 +2,7 @@ import "../App.css";
 // import DarkMode from "./Darkmode";
 import Navigation_menu from "./Navigation_menu";
 import HeroSection from "./HeroSection";
+import Details from "./Details";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         </label>
         <Navigation_menu />
         <HeroSection />
+        <Details />
       </div>
     </>
   );
