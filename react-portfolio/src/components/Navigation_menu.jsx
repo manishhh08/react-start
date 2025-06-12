@@ -1,10 +1,11 @@
+import companyLogo from "../assets/logo.png";
 function Navigation_menu() {
   return (
     <>
       <header>
         <div className="container">
           <div className="logo">
-            <img src="assets/logo.png" alt="" />
+            <img src={companyLogo} alt="company logo" />
           </div>
 
           <input type="checkbox" id="hamburgerMenu" />
