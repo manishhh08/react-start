@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection";
 import Details from "./Details";
 import Skills from "./Skills";
 import MyProject from "./MyProject";
+import AboutMe from "./AboutMe";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Details />
         <Skills />
         <MyProject />
+        <AboutMe />
       </div>
     </>
   );
