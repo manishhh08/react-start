@@ -5,7 +5,7 @@ const AddTaskForm = ({ tasks, handleOnAdd }) => {
     let stringGenerator =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    let stringLength = 6;
+    let stringLength = 8;
     let stringValue = "";
 
     for (let i = 0; i < stringLength; i++) {
@@ -16,13 +16,13 @@ const AddTaskForm = ({ tasks, handleOnAdd }) => {
     return stringValue;
   };
   const [taskObj, setTaskObj] = useState({
-    task: "INITIAL TASK",
+    task: "",
     hour: 10,
     type: "good",
   });
 
   const handleOnClick = () => {
-    alert("ADD TASK CLICKED");
+    //alert("ADD TASK CLICKED");
 
     // get new task
     let newTask = {
@@ -41,7 +41,7 @@ const AddTaskForm = ({ tasks, handleOnAdd }) => {
           className="form-control"
           id="task"
           name="task"
-          placeholder="ADD TASK"
+          placeholder="INITIAL TASK "
           value={taskObj.task}
           onChange={(e) => {
             let newTaskObj = {

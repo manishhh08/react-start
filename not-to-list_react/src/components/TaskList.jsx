@@ -4,7 +4,14 @@ import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
-const TaskList = ({ title, tasks, handleOnDelete, handleOnSwap }) => {
+const TaskList = ({
+  title,
+  type,
+  tasks,
+  handleOnDelete,
+  handleOnSwap,
+  hour,
+}) => {
   //   let tasks = props.tasks;
   //   let handleOnDelete = props.handleOnDelete;
   return (
@@ -24,7 +31,7 @@ const TaskList = ({ title, tasks, handleOnDelete, handleOnSwap }) => {
                     <>
                       <button
                         type="button"
-                        className="btn btn-danger"
+                        class="btn btn-danger"
                         // onclick="deleteTask('Z5zFfV')"
                         onClick={() => handleOnDelete(item.id)}
                       >
@@ -32,7 +39,7 @@ const TaskList = ({ title, tasks, handleOnDelete, handleOnSwap }) => {
                       </button>{" "}
                       <button
                         type="button"
-                        className="btn btn-success"
+                        class="btn btn-success"
                         onClick={() => handleOnSwap(item.id)}
                       >
                         <FaArrowRightFromBracket />
@@ -42,14 +49,14 @@ const TaskList = ({ title, tasks, handleOnDelete, handleOnSwap }) => {
                     <>
                       <button
                         type="button"
-                        className="btn btn-warning"
+                        class="btn btn-warning"
                         onClick={() => handleOnSwap(item.id)}
                       >
                         <IoArrowBackCircleOutline />
                       </button>{" "}
                       <button
                         type="button"
-                        className="btn btn-danger"
+                        class="btn btn-danger"
                         // onclick="deleteTask('Z5zFfV')"
                         onClick={() => handleOnDelete(item.id)}
                       >
@@ -64,9 +71,15 @@ const TaskList = ({ title, tasks, handleOnDelete, handleOnSwap }) => {
         </tbody>
       </table>
 
-      <div className="alert alert-danger" role="alert">
-        You wasted <span id="badHour"></span> hour
-      </div>
+      {type == "good" ? (
+        <div class="alert alert-info" role="alert">
+          Yous save {hour} hour
+        </div>
+      ) : (
+        <div class="alert alert-danger" role="alert">
+          You wasted {hour} hour
+        </div>
+      )}
     </div>
   );
 };

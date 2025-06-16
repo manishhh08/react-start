@@ -7,6 +7,8 @@ import ListComponent from "./components/ListComponents";
 
 function App() {
   const [totalHour, setTotalHour] = useState(0);
+  const [goodHour, setGoodHour] = useState(0);
+  const [badHour, setBadHour] = useState(0);
 
   let [tasks, setTasks] = useState([
     {
@@ -56,6 +58,8 @@ function App() {
 
     setTasks(updatedTasks);
 
+    calculateTotal(updatedTasks);
+
     // let object = { key1: "test", key2: "test2" };
 
     // let obj2 = { ...object };
@@ -76,7 +80,17 @@ function App() {
   const calculateTotal = (tempTaskList) => {
     let thr = tempTaskList.reduce((acc, item) => parseInt(item.hour) + acc, 0);
 
+    let bhr = tempTaskList.reduce((acc, item) => {
+      return acc + (item.type == "bad" ? parseInt(item.hour) : 0);
+    }, 0);
+
+    let ghr = tempTaskList.reduce((acc, item) => {
+      return acc + (item.type == "good" ? parseInt(item.hour) : 0);
+    }, 0);
+
     setTotalHour(thr);
+    setBadHour(bhr);
+    setGoodHour(ghr);
   };
 
   return (
@@ -94,6 +108,8 @@ function App() {
             tasks={tasks}
             handleOnDelete={handleOnDelete}
             handleOnSwap={handleOnSwap}
+            goodHour={goodHour}
+            badHour={badHour}
           />
 
           {/* Total Hours */}
