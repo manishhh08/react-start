@@ -23,13 +23,13 @@ const CalculatorBody = (props) => {
 
   const handleOnClick = (inputData) => {
     //alert("Button Clicked is :" + inputData);
-    //clear output using C
+
     // console.log(inputData);
 
     // setResult(inputData);
 
     // return;
-
+    //clear output using C
     if (inputData === "C") {
       setResult("0.0");
       return;
