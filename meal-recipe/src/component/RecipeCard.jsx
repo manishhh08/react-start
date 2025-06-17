@@ -2,10 +2,10 @@ import React from "react";
 
 const RecipeCard = ({ meal }) => {
   return (
-    <div className="col-5">
+    <div className="col-5 ">
       <div style={{ width: "100px", height: "100px", objectFit: "cover" }}>
-        {" "}
         <img
+          className="center-block"
           style={{ width: "100%", height: "100%" }}
           src={meal.strMealThumb}
           alt=""

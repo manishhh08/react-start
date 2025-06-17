@@ -12,12 +12,13 @@ function App() {
 
   const searchRef = useRef(null);
 
-  const handleOnClick = () => {
-    alert("Button clicked");
-  };
+  // const handleOnClick = () => {
+  //   alert("Button clicked");
+  // };
 
   //use api to retrive data
   const generateMealRecipe = async () => {
+    //alert("button has been clicked");
     let searchValue = searchRef.current.value;
 
     if (searchValue) {
@@ -29,9 +30,6 @@ function App() {
       setMeal(mealResponse.data.meals[0].strMeal);
 
       setMeals(mealResponse.data.meals);
-    } else {
-      console.log("new error found");
-      alert("you have error in your api");
     }
   };
   const handleOnChange = (event) => {
@@ -47,7 +45,7 @@ function App() {
             </div>
           </div>
           <div className="row">
-            <div className="col d-flex flex-column gap-2">
+            <div className="col d-flex flex-column gap-2 ">
               <div className="d-flex gap-4">
                 <input type="text" ref={searchRef} />
               </div>
@@ -59,7 +57,7 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="row gap-2">
+          <div className="row gap-2 bg-secondary text-black">
             {meals.map((m) => {
               return (
                 <>
