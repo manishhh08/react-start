@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.rectangle {
+  width: 500px;
+  height: 100%;
+  background-color: #4a90e2;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+/* src {
+  height: 200px;
+  width: 200px;
+} */
