@@ -2,7 +2,7 @@ import React from "react";
 
 const RecipeCard = ({ meal }) => {
   return (
-    <div className="col-5 ">
+    <div className="col-5 bg-secondary text-black ">
       <div style={{ width: "100px", height: "100px", objectFit: "cover" }}>
         <img
           className="center-block"

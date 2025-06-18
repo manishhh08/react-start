@@ -46,8 +46,8 @@ function App() {
           </div>
           <div className="row">
             <div className="col d-flex flex-column gap-2 ">
-              <div className="d-flex gap-4">
-                <input type="text" ref={searchRef} />
+              <div className="d-flex gap-4 ">
+                <input className="w-100" type="text" ref={searchRef} />
               </div>
               <button
                 className="rounded-pill bg-sucess"
@@ -57,7 +57,7 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="row gap-2 bg-secondary text-black">
+          <div className="row gap-5">
             {meals.map((m) => {
               return (
                 <>
