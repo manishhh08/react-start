@@ -7,7 +7,7 @@ const MyProject = () => {
       <div className="grid project-grid">
         <div className="project-card">
           <iframe
-            src="https://manishhh08.github.io/DC-JS/not-to-list/notlist.html"
+            src="https://not-to-do-listreact.vercel.app/"
             // frameorder="0"
             style={{ height: "100%", width: "100%", border: "none" }}
           ></iframe>
@@ -21,14 +21,14 @@ const MyProject = () => {
         </div>
         <div className="project-card">
           <iframe
-            src="https://manishhh08.github.io/starter/resume.html"
+            src="https://randomjoke-delta.vercel.app/"
             // frameborder="0"
             style={{ height: "100%", width: "100%", border: "none" }}
           ></iframe>
         </div>
         <div className="project-card">
           <iframe
-            src="https://manishhh08.github.io/prank-calculator/"
+            src="https://prank-calculator-one.vercel.app/"
             // frameborder="0"
             style={{ height: "100%", width: "100%", border: "none" }}
           ></iframe>
