@@ -9,7 +9,9 @@ const AboutMe = () => {
           <img src={profileImage} alt="profile image manish" />
         </div>
         <div className="right_flex">
-          <div className="aboutheader">About Me</div>
+          <div className="aboutheader">
+            <div style={{ borderBottom: "1px orange solid" }}>About Me</div>
+          </div>
           <div className="aboutdetails">
             <span>
               <b>Manish Lama</b>
