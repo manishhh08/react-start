@@ -89,6 +89,7 @@ header .container {
 header .container .menu {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 /* hero section */
 .hero-section {
