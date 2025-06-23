@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import companyLogo from "../assets/logo.png";
 function Navigation_menu() {
   return (
@@ -11,31 +12,31 @@ function Navigation_menu() {
           <input type="checkbox" id="hamburgerMenu" />
           <div className="menu">
             <div>
-              <a href="#home">
+              <a href="/">
                 <i className="fa-solid fa-house-chimney-crack"></i> HOME
               </a>
             </div>
 
             <div>
-              <a href="#skills">
+              <a href="/skills">
                 <i className="fa-solid fa-gear"></i> SKILLS
               </a>
             </div>
 
             <div>
-              <a href="#projects">
+              <a href="/projects">
                 <i className="fas fa-project-diagram"></i> PROJECTS
               </a>
             </div>
 
             <div>
-              <a href="#about">
+              <a href="/about">
                 <i className="fa-solid fa-circle-info"></i> ABOUT
               </a>
             </div>
 
             <div>
-              <a href="#contact">
+              <a href="/contact">
                 {" "}
                 <i className="fa-solid fa-phone"></i> CONTACT
               </a>

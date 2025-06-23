@@ -1,5 +1,6 @@
 import React from "react";
 import profileImage from "../assets/manish.jpg";
+import Navigation_menu from "./Navigation_menu";
 
 const HeroSection = () => {
   return (
