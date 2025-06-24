@@ -9,6 +9,7 @@ const SavedMovieCard = () => {
         <FilterMovie />
         <div className="saved-card container">
           <MovieCard />
+          <MovieCard />
         </div>
       </div>
     </>
