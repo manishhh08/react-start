@@ -5,7 +5,7 @@ const apikey = import.meta.env.VITE_API_KEY;
 const SearchMovie = ({ setMovieObject }) => {
   const searchRef = useRef(null);
   const handleOnSearch = async () => {
-    alert("button clicked");
+    // alert("button clicked");
     console.log(apikey);
     let search = searchRef.current.value;
     const response = await axios.get(
