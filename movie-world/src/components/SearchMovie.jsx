@@ -24,7 +24,7 @@ const SearchMovie = ({ setMovieObject }) => {
   };
   useEffect(() => {
     movieSearch("Crows Zero");
-  });
+  }, []);
   return (
     <div className="search">
       <input type="text" placeholder="Search movie..." ref={searchRef} />
