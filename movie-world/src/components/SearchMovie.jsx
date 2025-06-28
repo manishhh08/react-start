@@ -1,17 +1,14 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 const apikey = import.meta.env.VITE_API_KEY;
 
 const SearchMovie = ({ setMovieObject }) => {
   const searchRef = useRef(null);
-  const handleOnSearch = async () => {
-    // alert("button clicked");
-    console.log(apikey);
+  const movieSearch = async (s) => {
     let search = searchRef.current.value;
     const response = await axios.get(
-      `http://www.omdbapi.com/?apikey=${apikey}&t=${search}`
+      `http://www.omdbapi.com/?apikey=${apikey}&t=${s}`
     );
-    console.log(response.data);
     if (response.data) {
       let movieObject = {
         title: response.data.Title,
@@ -21,6 +18,13 @@ const SearchMovie = ({ setMovieObject }) => {
       setMovieObject(movieObject);
     }
   };
+  const handleOnSearch = async () => {
+    let searchItem = searchRef.current.value;
+    movieSearch(searchItem);
+  };
+  useEffect(() => {
+    movieSearch("Crows Zero");
+  });
   return (
     <div className="search">
       <input type="text" placeholder="Search movie..." ref={searchRef} />
