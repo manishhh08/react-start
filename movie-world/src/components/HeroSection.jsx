@@ -4,8 +4,9 @@ import MovieCard from "./MovieCard";
 
 import image from "../assets/image.jpg";
 
-const HeroSection = () => {
+const HeroSection = ({ addMovieList }) => {
   const [movieObject, setMovieObject] = useState({
+    imdbID: "test",
     title: "Avengers",
     image: { image },
     detail: "This is the review for the mentioned movie",
@@ -16,7 +17,7 @@ const HeroSection = () => {
         <SearchMovie setMovieObject={setMovieObject} />
         {/* searched movie card */}
         <div className="container">
-          <MovieCard {...movieObject} />
+          <MovieCard {...movieObject} addMovieList={addMovieList} />
         </div>
       </div>
     </>

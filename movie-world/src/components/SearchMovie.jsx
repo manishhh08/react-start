@@ -14,6 +14,7 @@ const SearchMovie = ({ setMovieObject }) => {
         title: response.data.Title,
         detail: response.data.Plot,
         image: response.data.Poster,
+        imdbID: response.data.imdbID,
       };
       setMovieObject(movieObject);
     }
