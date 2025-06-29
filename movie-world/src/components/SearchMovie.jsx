@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useRef } from "react";
 const apikey = import.meta.env.VITE_API_KEY;
 
-const SearchMovie = ({ setMovieObject }) => {
+const SearchMovie = ({ setMovieObject, setIsSearching }) => {
   const searchRef = useRef(null);
   const movieSearch = async (s) => {
     const response = await axios.get(
