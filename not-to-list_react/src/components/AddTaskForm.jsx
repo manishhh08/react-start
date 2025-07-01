@@ -16,6 +16,7 @@ const AddTaskForm = ({ tasks, handleOnAdd }) => {
     return stringValue;
   };
   const [taskObj, setTaskObj] = useState({
+    id: "",
     task: "",
     hour: 10,
     type: "good",

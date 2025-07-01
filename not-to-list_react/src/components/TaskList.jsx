@@ -72,11 +72,11 @@ const TaskList = ({
       </table>
 
       {type == "good" ? (
-        <div class="alert alert-info" role="alert">
+        <div className="alert alert-info" role="alert">
           Yous save {hour} hour
         </div>
       ) : (
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           You wasted {hour} hour
         </div>
       )}

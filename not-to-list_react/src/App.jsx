@@ -1,47 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import AddTaskForm from "./components/AddTaskForm";
 import TotalHourComponent from "./components/TotalHourComponent";
 import ListComponent from "./components/ListComponents";
+import axios from "axios";
 
 function App() {
   const [totalHour, setTotalHour] = useState(0);
   const [goodHour, setGoodHour] = useState(0);
   const [badHour, setBadHour] = useState(0);
 
-  let [tasks, setTasks] = useState([
-    {
-      id: "1",
-      task: "TASK",
-      hour: 10,
-      type: "good",
-    },
-    {
-      id: "2",
-      task: "TASK 2",
-      hour: 20,
-      type: "bad",
-    },
-    {
-      id: "3",
-      task: "TASK 3",
-      hour: 30,
-      type: "good",
-    },
-    {
-      id: "4",
-      task: "TASK 4",
-      hour: 40,
-      type: "bad",
-    },
-    {
-      id: "5",
-      task: "TASK 5",
-      hour: 50,
-      type: "bad",
-    },
-  ]);
+  let [tasks, setTasks] = useState([]);
 
   const handleOnDelete = (id) => {
     let updatedTasks = tasks.filter((item) => item.id != id);
@@ -65,13 +35,23 @@ function App() {
     // let obj2 = { ...object };
   };
 
-  const handleOnAdd = (taskObj) => {
+  const handleOnAdd = async (taskObj) => {
     // get old task List
     let newTaskList = [...tasks];
 
     // update old task list and generate new task list
     newTaskList.push(taskObj);
+    // create api call and use post to add task
+    let response = await axios.post(
+      "http://localhost:3000/api/v1/tasks",
+      taskObj
+    );
 
+    if (response.data.status) {
+      //update the tasks
+      setTasks(newTaskList);
+      calculateTotal(newTaskList);
+    }
     // update the tasks
     setTasks(newTaskList);
     calculateTotal(newTaskList);
@@ -92,6 +72,16 @@ function App() {
     setBadHour(bhr);
     setGoodHour(ghr);
   };
+
+  const fetchTasks = async () => {
+    let response = await axios.get("http://localhost:3000/api/v1/tasks");
+    console.log(100, response.data);
+    setTasks(response.data.tasks);
+    calculateTotal(response.data.tasks);
+  };
+  useEffect(() => {
+    fetchTasks();
+  }, []);
 
   return (
     <>
