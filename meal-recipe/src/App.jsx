@@ -50,7 +50,7 @@ function App() {
                 <input className="w-100" type="text" ref={searchRef} />
               </div>
               <button
-                className="rounded-pill bg-sucess w-50 "
+                className="rounded-pill bg-sucess d-grid gap-2 col-6 mx-auto"
                 onClick={generateMealRecipe}
               >
                 Click here for recipe
