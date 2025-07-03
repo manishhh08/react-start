@@ -37,7 +37,7 @@ function App() {
   };
   return (
     <>
-      <div className="wrapper bg-dark text-white p-4 rounded-5">
+      <div className="wrapper bg-dark text-white p-4 ">
         <div className="container d-flex flex-column gap-5">
           <div className="row">
             <div className="col d-flex align-items-center justify-content-center">
