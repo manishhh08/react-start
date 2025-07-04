@@ -18,6 +18,8 @@ function App() {
     setTasks(updatedTasks);
 
     calculateTotal(updatedTasks);
+
+    //add ondelete here
   };
 
   const handleOnSwap = (id) => {
@@ -55,6 +57,7 @@ function App() {
     // update the tasks
     setTasks(newTaskList);
     calculateTotal(newTaskList);
+    // add onadd here
   };
 
   const calculateTotal = (tempTaskList) => {
