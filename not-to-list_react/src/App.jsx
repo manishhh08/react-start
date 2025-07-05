@@ -5,6 +5,8 @@ import AddTaskForm from "./components/AddTaskForm";
 import TotalHourComponent from "./components/TotalHourComponent";
 import ListComponent from "./components/ListComponents";
 import axios from "axios";
+import useSound from "use-sound";
+import mySoundFile from "./assets/chime.mp3";
 
 function App() {
   const [totalHour, setTotalHour] = useState(0);
