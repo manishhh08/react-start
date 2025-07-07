@@ -38,7 +38,7 @@ function App() {
 
     // call patch api
     let response = await axios.patch(
-      "http://localhost:4000/api/v1/tasks/" + id,
+      "http://localhost:3000/api/v1/tasks/" + id,
       {
         type: taskObj.type,
       }
@@ -58,8 +58,6 @@ function App() {
     // get old task List
     let newTaskList = [...tasks];
 
-    // update old task list and generate new task list
-    newTaskList.push(taskObj);
     // create api call and use post to add task
     let response = await axios.post(
       "http://localhost:3000/api/v1/tasks",
@@ -71,6 +69,8 @@ function App() {
 
       //update the tasks
       taskObj._id = response.data.task._id;
+      // update old task list and generate new task list
+      newTaskList.push(taskObj);
       setTasks(newTaskList);
       calculateTotal(newTaskList);
     }

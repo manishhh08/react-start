@@ -33,14 +33,14 @@ const TaskList = ({
                         type="button"
                         className="btn btn-danger"
                         // onclick="deleteTask('Z5zFfV')"
-                        onClick={() => handleOnDelete(item.id)}
+                        onClick={() => handleOnDelete(item._id)}
                       >
                         <RiDeleteBin2Fill />
                       </button>{" "}
                       <button
                         type="button"
                         className="btn btn-success"
-                        onClick={() => handleOnSwap(item.id)}
+                        onClick={() => handleOnSwap(item._id)}
                       >
                         <FaArrowRightFromBracket />
                       </button>
@@ -50,7 +50,7 @@ const TaskList = ({
                       <button
                         type="button"
                         className="btn btn-warning"
-                        onClick={() => handleOnSwap(item.id)}
+                        onClick={() => handleOnSwap(item._id)}
                       >
                         <IoArrowBackCircleOutline />
                       </button>{" "}
@@ -58,7 +58,7 @@ const TaskList = ({
                         type="button"
                         className="btn btn-danger"
                         // onclick="deleteTask('Z5zFfV')"
-                        onClick={() => handleOnDelete(item.id)}
+                        onClick={() => handleOnDelete(item._id)}
                       >
                         <RiDeleteBin2Fill />
                       </button>
