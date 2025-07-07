@@ -6,7 +6,9 @@ import TotalHourComponent from "./components/TotalHourComponent";
 import ListComponent from "./components/ListComponents";
 import axios from "axios";
 import useSound from "use-sound";
-import mySoundFile from "./assets/chime.mp3";
+import mySoundFileAdd from "./assets/chime.mp3";
+import mySoundFileDelete from "./assets/delete.wav";
+import mySoundFileSwap from "./assets/swoosh.wav";
 
 function App() {
   const [totalHour, setTotalHour] = useState(0);
@@ -14,9 +16,10 @@ function App() {
   const [badHour, setBadHour] = useState(0);
 
   let [tasks, setTasks] = useState([]);
-  const addTaskSound = () => {
-    const [play] = useSound(mySoundFile);
-  };
+
+  const [addSound] = useSound(mySoundFileAdd);
+  const [deleteSound] = useSound(mySoundFileDelete);
+  const [swapSound] = useSound(mySoundFileSwap);
 
   const handleOnDelete = async (id) => {
     let response = await axios.delete(
@@ -24,6 +27,7 @@ function App() {
     );
 
     if (response.data.status) {
+      deleteSound();
       let updatedTasks = tasks.filter((item) => item._id != id);
       setTasks(updatedTasks);
       calculateTotal(updatedTasks);
@@ -46,6 +50,7 @@ function App() {
 
     // update status of task only if true response
     if (response.data.status) {
+      swapSound();
       setTasks(updatedTasks);
       calculateTotal(updatedTasks);
     }
@@ -65,7 +70,7 @@ function App() {
     );
 
     if (response.data.status) {
-      // play();
+      addSound();
 
       //update the tasks
       taskObj._id = response.data.task._id;
