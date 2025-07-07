@@ -14,28 +14,43 @@ function App() {
   const [badHour, setBadHour] = useState(0);
 
   let [tasks, setTasks] = useState([]);
-
-  const handleOnDelete = (id) => {
-    let updatedTasks = tasks.filter((item) => item.id != id);
-    setTasks(updatedTasks);
-
-    calculateTotal(updatedTasks);
-
-    //add ondelete here
+  const addTaskSound = () => {
+    const [play] = useSound(mySoundFile);
   };
 
-  const handleOnSwap = (id) => {
+  const handleOnDelete = async (id) => {
+    let response = await axios.delete(
+      "http://localhost:3000/api/v1/tasks/" + id
+    );
+
+    if (response.data.status) {
+      let updatedTasks = tasks.filter((item) => item._id != id);
+      setTasks(updatedTasks);
+      calculateTotal(updatedTasks);
+    }
+  };
+
+  const handleOnSwap = async (id) => {
     let updatedTasks = [...tasks];
-    let taskObj = updatedTasks.find((item) => item.id == id);
+    let taskObj = updatedTasks.find((item) => item._id == id);
 
     taskObj.type = taskObj.type == "good" ? "bad" : "good";
 
-    setTasks(updatedTasks);
+    // call patch api
+    let response = await axios.patch(
+      "http://localhost:4000/api/v1/tasks/" + id,
+      {
+        type: taskObj.type,
+      }
+    );
 
-    calculateTotal(updatedTasks);
+    // update status of task only if true response
+    if (response.data.status) {
+      setTasks(updatedTasks);
+      calculateTotal(updatedTasks);
+    }
 
     // let object = { key1: "test", key2: "test2" };
-
     // let obj2 = { ...object };
   };
 
@@ -52,7 +67,10 @@ function App() {
     );
 
     if (response.data.status) {
+      // play();
+
       //update the tasks
+      taskObj._id = response.data.task._id;
       setTasks(newTaskList);
       calculateTotal(newTaskList);
     }

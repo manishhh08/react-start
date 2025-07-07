@@ -28,7 +28,6 @@ const AddTaskForm = ({ tasks, handleOnAdd }) => {
     // get new task
     let newTask = {
       ...taskObj,
-      id: generateUniqueId(),
     };
 
     handleOnAdd(newTask);
