@@ -135,7 +135,7 @@ function App() {
         </div>
       </div>
 
-      <div className="toast-container position-fixed bottom-0 end-0 p-3">
+      {/* <div className="toast-container position-fixed bottom-0 end-0 p-3">
         <div
           id="liveToast"
           className="toast"
@@ -158,10 +158,9 @@ function App() {
             <span id="toast-msg"></span>
           </div>
         </div>
-      </div>
-      <audio id="chime-audio">
-        <source src="assets/chime.mp3" />
-      </audio>
+      </div> */}
+
+      {/* add react toast container here */}
     </>
   );
 }
