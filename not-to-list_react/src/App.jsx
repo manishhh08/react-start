@@ -107,6 +107,21 @@ function App() {
     setTasks(response.data.tasks);
     calculateTotal(response.data.tasks);
   };
+  const handleOnDeleteAll = async (idsToDelete) => {
+    console.log(idsToDelete);
+
+    let response = await axios.delete("http://localhost:3000/api/v1/tasks", {
+      data: {
+        ids: idsToDelete,
+      },
+    });
+
+    if (response.data.status) {
+      alert("Task Deleted");
+      fetchTasks();
+    }
+  };
+
   useEffect(() => {
     fetchTasks();
   }, []);
@@ -128,6 +143,7 @@ function App() {
             handleOnSwap={handleOnSwap}
             goodHour={goodHour}
             badHour={badHour}
+            handleOnDeleteAll={handleOnDeleteAll}
           />
 
           {/* Total Hours */}

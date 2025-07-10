@@ -7,6 +7,7 @@ const ListComponent = ({
   handleOnSwap,
   goodHour,
   badHour,
+  handleOnDeleteAll,
 }) => {
   //   good list
   let goodTasks = tasks.filter((item) => item.type == "good");
@@ -24,6 +25,7 @@ const ListComponent = ({
         handleOnSwap={handleOnSwap}
         type="good"
         hour={goodHour}
+        handleOnDeleteAll={handleOnDeleteAll}
       />
 
       {/* Bad List */}
@@ -34,6 +36,7 @@ const ListComponent = ({
         handleOnDelete={handleOnDelete}
         handleOnSwap={handleOnSwap}
         hour={badHour}
+        handleOnDeleteAll={handleOnDeleteAll}
       />
     </div>
   );
