@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 
@@ -11,19 +11,63 @@ const TaskList = ({
   handleOnDelete,
   handleOnSwap,
   hour,
+  handleOnDeleteAll,
 }) => {
   //   let tasks = props.tasks;
   //   let handleOnDelete = props.handleOnDelete;
+
+  const [idsToDelete, setIdsToDelete] = useState([]);
+
+  const handleOnChange = (checked, id) => {
+    let tempIds = [...idsToDelete];
+
+    console.log(checked, id);
+
+    if (checked) {
+      tempIds.push(id);
+      setIdsToDelete(tempIds);
+    } else {
+      //console.log("UNCHECK");
+      tempIds = tempIds.filter((ti) => ti != id);
+      setIdsToDelete(tempIds);
+    }
+  };
   return (
     <div className="col-sm-12 col-md-6">
       <h2>{title}</h2>
-      <hr />
+
+      {idsToDelete.length > 0 ? (
+        <button
+          className="btn btn-danger"
+          onClick={() => {
+            setIdsToDelete([]);
+            handleOnDeleteAll(idsToDelete);
+          }}
+        >
+          Delete All
+        </button>
+      ) : (
+        ""
+      )}
       <table className="table">
         <tbody>
           {tasks.map((item, idx) => {
             return (
               <tr>
                 <th scope="row">{idx + 1}</th>
+                <td>
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    onChange={(event) =>
+                      handleOnChange(event.target.checked, item._id)
+                    }
+                    checked={
+                      idsToDelete.find((i) => i === item._id) ? true : false
+                    }
+                  />
+                </td>
                 <td>{item.task}</td>
                 <td>{item.hour}Hr</td>
                 <td>

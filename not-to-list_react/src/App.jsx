@@ -71,7 +71,6 @@ function App() {
 
     if (response.data.status) {
       addSound();
-
       //update the tasks
       taskObj._id = response.data.task._id;
       // update old task list and generate new task list
@@ -108,7 +107,7 @@ function App() {
     calculateTotal(response.data.tasks);
   };
   const handleOnDeleteAll = async (idsToDelete) => {
-    console.log(idsToDelete);
+    //console.log(idsToDelete);
 
     let response = await axios.delete("http://localhost:3000/api/v1/tasks", {
       data: {
@@ -117,7 +116,8 @@ function App() {
     });
 
     if (response.data.status) {
-      alert("Task Deleted");
+      deleteSound();
+      //alert("Task Deleted");
       fetchTasks();
     }
   };
