@@ -1,12 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  background: #eeaeca;
+  background: #c56363;
   background: radial-gradient(
     circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+    rgb(179, 155, 165) 0%,
+    rgb(85, 110, 140) 100%
   );
+  color: rgb(54, 45, 83);
 }
 
 .wrapper {
